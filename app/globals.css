@@ -1,18 +1,30 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* ==============================================================
+   DARK VARIANT CONFIG
+   Enables the `dark:` variant via class-based dark mode
+================================================================*/
 @custom-variant dark (&:is(.dark *));
 
+/* ==============================================================
+   THEME TOKEN MAPPING (Semantic to system)
+================================================================*/
 @theme inline {
+  /* Fonts */
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+
+  /* Core colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+
+  /* Brand + semantic colors */
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
@@ -21,6 +33,8 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+
+  /* Radii */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -30,23 +44,29 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
-/* --------------------------------------------------------------
-   Light Theme (Default)
-----------------------------------------------------------------*/
+/* ==============================================================
+   LIGHT THEME (Default)
+================================================================*/
 :root {
   --radius: 0.625rem;
+
+  /* Base tones */
   --background: oklch(0.99 0.005 95);
   --foreground: oklch(0.15 0.02 95);
 
-  /* Brand palette */
-  --primary: oklch(0.86 0.19 85); /* construction yellow */
+  /* Brand palette: Renovex yellow + neutral gray */
+  --primary: oklch(0.86 0.19 85);
   --primary-foreground: oklch(0.12 0.03 95);
+
+  /* Supporting colors */
   --secondary: oklch(0.92 0.01 95);
   --secondary-foreground: oklch(0.25 0.03 95);
   --accent: oklch(0.95 0.04 85);
   --accent-foreground: oklch(0.25 0.03 95);
   --muted: oklch(0.94 0.01 95);
   --muted-foreground: oklch(0.45 0.017 95);
+
+  /* UI structure colors */
   --border: oklch(0.93 0.01 95);
   --input: oklch(0.94 0.01 95);
   --ring: oklch(0.75 0.04 95);
@@ -56,40 +76,36 @@
   --card-foreground: oklch(0.15 0.02 95);
 }
 
-/* --------------------------------------------------------------
-   Dark Theme
-----------------------------------------------------------------*/
+/* ==============================================================
+   DARK THEME
+================================================================*/
 .dark {
   --background: oklch(0.15 0.02 95);
   --foreground: oklch(0.98 0.005 95);
+
   --primary: oklch(0.80 0.17 85);
   --primary-foreground: oklch(0.12 0.03 95);
+
   --secondary: oklch(0.25 0.01 95);
   --secondary-foreground: oklch(0.98 0.005 95);
+
   --accent: oklch(0.28 0.02 85);
   --accent-foreground: oklch(0.98 0.005 95);
+
   --muted: oklch(0.25 0.01 95);
   --muted-foreground: oklch(0.80 0.01 95);
+
   --border: oklch(0.25 0.01 95);
   --input: oklch(0.25 0.01 95);
   --ring: oklch(0.75 0.04 95);
+
   --card: oklch(0.18 0.02 95);
   --card-foreground: oklch(0.98 0.005 95);
 }
 
-/* --------------------------------------------------------------
-   Base Layer
-----------------------------------------------------------------*/
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-
-  body {
-    @apply bg-background text-foreground font-sans antialiased;
-  }
-}
-
+/* ==============================================================
+   CUSTOM ANIMATIONS
+================================================================*/
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);
@@ -102,3 +118,21 @@
 .animate-spin-slow {
   animation: spin-slow 15s linear infinite;
 }
+
+/* ==============================================================
+   BASE + UTILITIES
+================================================================*/
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
