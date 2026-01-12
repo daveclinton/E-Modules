@@ -12,21 +12,21 @@ export default function TestimonialsSection() {
     {
       name: "Sophia H.",
       role: "Civil Engineer",
-      image: "/avatars/avatar1.avif",
+      image: "/avatars/avatar-1.avif",
       review:
         "The interior finishing on my new home is stunning! Every detail, from flooring to custom cabinetry, was done with excellence. They truly went above and beyond to deliver a beautiful space.",
     },
     {
       name: "Jidan D.",
       role: "Homeowner",
-      image: "/avatars/avatar2.avif",
+      image: "/avatars/avatar-2.avif",
       review:
         "Our office renovation exceeded all expectations! The team was professional, punctual, and highly skilled. They delivered a result that inspires creativity in our workspace.",
     },
     {
       name: "Thomas G.",
       role: "Project Manager",
-      image: "/avatars/avatar3.avif",
+      image: "/avatars/avatar-3.avif",
       review:
         "We hired them for an outdoor project — the results are breathtaking. The team was responsive and professional, transforming our yard into a gorgeous, usable space that enhanced our curb appeal.",
     },
