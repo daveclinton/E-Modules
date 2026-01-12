@@ -130,10 +130,10 @@ export default function Footer() {
           <p>© Renovex 2026</p>
 
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/terms-of-service" className="hover:text-primary">
+            <Link href="/terms" className="hover:text-primary">
               Term of service
             </Link>
-            <Link href="/privacy-policy" className="hover:text-primary">
+            <Link href="/privacy" className="hover:text-primary">
               Privacy Policy
             </Link>
           </div>
