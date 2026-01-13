@@ -1,6 +1,6 @@
 export const metadata = {
-    title: "Terms of Service | Renovex",
-    description: "Read Renovex terms of service and usage agreement.",
+    title: "Terms of Service | E‑Design Modules",
+    description: "Read E‑Design Modules terms of service and usage agreement.",
   };
   
   export default function TermsPage() {
@@ -9,7 +9,7 @@ export const metadata = {
         <div className="max-w-4xl mx-auto px-6 space-y-10">
           <h1 className="text-4xl font-bold mb-6">Terms of Service</h1>
           <p className="text-muted-foreground">
-            Welcome to Renovex! By accessing or using our website, you agree to be
+            Welcome to E‑Design Modules! By accessing or using our website, you agree to be
             bound by the following terms and conditions. Please read them carefully
             before engaging with our services.
           </p>
@@ -43,7 +43,7 @@ export const metadata = {
               </h2>
               <p>
                 All content, materials, graphics, and code on this site are the
-                property of Renovex and protected under international copyright
+                property of E‑Design Modules and protected under international copyright
                 laws. You may not reproduce or reuse site content without prior
                 written permission.
               </p>
@@ -54,7 +54,7 @@ export const metadata = {
                 4. Limitation of Liability
               </h2>
               <p>
-                Renovex is not liable for any direct or indirect damages resulting
+                E‑Design Modules is not liable for any direct or indirect damages resulting
                 from use of this website or services provided herein. All services
                 are offered &quot;as is&quot; without warranties of any kind.
               </p>
@@ -62,7 +62,16 @@ export const metadata = {
   
             <div>
               <h2 className="text-lg font-semibold mb-2 text-foreground">
-                5. Updates to Terms
+                5. Legal Compliance
+              </h2>
+              <p>
+                E‑Design Modules operates in compliance with Kenyan construction laws and data protection regulations, including county approvals, PLUPA (2019), and NCA requirements.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-lg font-semibold mb-2 text-foreground">
+                6. Updates to Terms
               </h2>
               <p>
                 We reserve the right to update these terms periodically without prior

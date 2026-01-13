@@ -14,12 +14,10 @@ export default function AboutSection() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-2">
-              About Our Company
+              About E‑Design Modules
             </h2>
             <p className="text-muted-foreground max-w-2xl">
-              With years of experience in the construction industry, we
-              specialize in delivering high-quality, innovative, and sustainable
-              solutions tailored to meet the unique needs of our clients.
+              E‑Design Modules is a multidisciplinary construction and design company based in Kenya, with offices in both Nakuru County and Nairobi. Established in 2010, the company integrates architecture, quantity surveying, and construction management to deliver cost‑efficient, compliant, and reliable projects for all clients.
             </p>
           </div>
         </div>

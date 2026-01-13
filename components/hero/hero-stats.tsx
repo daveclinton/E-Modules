@@ -1,9 +1,9 @@
 export default function HeroStats() {
     const stats = [
-      { number: "150+", label: "Complete Projects" },
-      { number: "100+", label: "Team Members" },
-      { number: "200+", label: "Client Reviews" },
-      { number: "30", label: "Winning Awards" },
+      { number: "100+", label: "Complete Projects" },
+      { number: "20+", label: "Team Members" },
+      { number: "500+", label: "Client Reviews" },
+      { number: "15+", label: "Years in Service" },
     ];
   
     return (

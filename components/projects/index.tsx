@@ -3,25 +3,35 @@ import { ProjectCard } from "./project-card";
 
 
 export default function ProjectsSection() {
+  
   const projects = [
     {
-      title: "Harbor View Residences",
+      title: "Modern Residential Bungalow",
       description:
-        "A luxury residential development offering stunning waterfront views and modern amenities for an elevated living experience.",
-      location: "1901 Thornridge Cir. Shiloh, Hawaii 81063",
-      date: "08/08/2023 – 12/05/2024",
-      scope: "Office Complex Development",
+        "A contemporary residential bungalow designed and built with a focus on functionality, comfort, and cost efficiency.",
+      location: "Nakuru County, Kenya",
+      date: "Duration: 6 months",
+      scope: "Design, Quantity Surveying, and Construction",
       image: "/images/project-1.avif",
     },
     {
-      title: "Sunset Ridge Development",
+      title: "Commercial Office Development",
       description:
-        "A premium residential community designed for modern living, offering breathtaking views and exceptional amenities.",
-      location: "8502 Preston Rd. Inglewood, Maine 98380",
-      date: "01/02/2023 – 02/01/2024",
-      scope: "Mixed-Use Residential Complex",
+        "A commercial office project in Nairobi delivered within budget and in full compliance with county and national regulations.",
+      location: "Nairobi, Kenya",
+      date: "Duration: 9 months",
+      scope: "Project Management and Construction",
       image: "/images/project-2.avif",
       reverse: true,
+    },
+    {
+      title: "Mixed‑Use Development",
+      description:
+        "A mixed residential and commercial development focused on durability and efficient space utilization.",
+      location: "Kenya",
+      date: "Duration: 12 months",
+      scope: "Design Coordination and Construction",
+      image: "/images/project-1.avif",
     },
   ];
 

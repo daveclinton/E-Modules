@@ -10,25 +10,25 @@ import { TestimonialCard } from "./testimonial-card";
 export default function TestimonialsSection() {
   const testimonials = [
     {
-      name: "Sophia H.",
-      role: "Civil Engineer",
+      name: "James K.",
+      role: "Home Owner",
       image: "/avatars/avatar-1.avif",
       review:
-        "The interior finishing on my new home is stunning! Every detail, from flooring to custom cabinetry, was done with excellence. They truly went above and beyond to deliver a beautiful space.",
+        "E‑Design Modules handled our project professionally from design to completion. The quality and cost control were excellent.",
     },
     {
-      name: "Jidan D.",
+      name: "Grace M.",
       role: "Homeowner",
       image: "/avatars/avatar-2.avif",
       review:
-        "Our office renovation exceeded all expectations! The team was professional, punctual, and highly skilled. They delivered a result that inspires creativity in our workspace.",
+       "They delivered on time and within budget. Communication was clear and the team was professional.",
     },
     {
-      name: "Thomas G.",
-      role: "Project Manager",
+      name: "Daniel O.",
+      role: "Commercial Client",
       image: "/avatars/avatar-3.avif",
       review:
-        "We hired them for an outdoor project — the results are breathtaking. The team was responsive and professional, transforming our yard into a gorgeous, usable space that enhanced our curb appeal.",
+        "A reliable construction company with strong technical expertise. Highly recommended."
     },
   ];
 

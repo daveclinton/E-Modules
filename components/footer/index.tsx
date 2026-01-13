@@ -60,7 +60,7 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2 font-semibold text-lg">
               <div className="w-6 h-6 rounded-sm bg-primary"></div>
-              <span>Renovex</span>
+              <span>E‑Design Modules</span>
             </div>
             <p className="text-sm text-background/80 max-w-sm">
               Revolutionizing the construction industry with innovative solutions
@@ -119,15 +119,20 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4 text-background">Contact</h4>
             <ul className="space-y-2 text-sm">
-              <li>8502 Preston Rd.<br />Inglewood, Maine 98380</li>
-              <li>support@renovex.com</li>
-              <li>(308) 555‑0121</li>
+              <li>Nakuru County, Kenya</li>
+              <li>(awaiting confirmation)</li>
+              <li>+254 722 272982</li>
+              <li className="pt-2">
+                <span className="font-medium">Operating Hours:</span><br />
+                Mon–Fri 8:00 AM–5:00 PM<br />
+                Sat 8:00 AM–1:00 PM
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-background/10 flex flex-col md:flex-row justify-between items-center pt-6 text-sm opacity-80">
-          <p>© Renovex 2026</p>
+          <p>© E‑Design Modules 2026</p>
 
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/terms" className="hover:text-primary">

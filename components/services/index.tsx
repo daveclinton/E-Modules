@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { ServiceCard } from "./service-card";
-import { Hammer, Home, Droplet, Building2 } from "lucide-react";
+import { Pencil, Calculator, Building2, ClipboardList, Hammer, Home } from "lucide-react";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,29 +15,41 @@ export default function ServicesSection() {
 
   const services = [
     {
-      title: "Building Renovation",
+      title: "Architectural Design & Planning",
       description:
-        "Transforming outdated spaces into modern, functional, and aesthetically pleasing ones.",
-      icon: <Hammer className="w-5 h-5" />,
+        "Professional architectural designs that are functional, practical, and compliant with Kenyan planning and building regulations. Includes: Concept design, approval drawings, 2D & 3D designs, space planning.",
+      icon: <Pencil className="w-5 h-5" />,
       active: true,
     },
     {
-      title: "Interior Finishing",
+      title: "Quantity Surveying & Cost Management",
       description:
-        "Delivering impeccable craftsmanship to enhance beauty and comfort.",
-      icon: <Home className="w-5 h-5" />,
+        "Accurate cost planning and financial control to ensure projects are delivered within budget. Includes: BOQs, cost estimates, tender analysis, cost reports.",
+      icon: <Calculator className="w-5 h-5" />,
     },
     {
-      title: "Roofing Solutions",
+      title: "General Building Construction",
       description:
-        "Providing durable and innovative roofing systems designed to protect.",
-      icon: <Droplet className="w-5 h-5" />,
-    },
-    {
-      title: "Foundation Repair",
-      description:
-        "Ensuring structural stability with expert foundation solutions.",
+        "Construction of residential, commercial, and institutional buildings from foundation to completion. Includes: Site supervision, skilled labor coordination, quality control.",
       icon: <Building2 className="w-5 h-5" />,
+    },
+    {
+      title: "Project Management",
+      description:
+        "End‑to‑end project coordination to ensure timely delivery, cost control, and quality standards. Includes: Scheduling, contractor coordination, progress monitoring.",
+      icon: <ClipboardList className="w-5 h-5" />,
+    },
+    {
+      title: "Renovations & Extensions",
+      description:
+        "Upgrading and extending existing buildings while maintaining safety and compliance. Includes: Residential renovations, commercial refurbishments.",
+      icon: <Hammer className="w-5 h-5" />,
+    },
+    {
+      title: "Interior Fit‑Out & Finishes",
+      description:
+        "Modern interior solutions tailored to client needs and space usage. Includes: Office fit‑outs, residential interiors, finish selection.",
+      icon: <Home className="w-5 h-5" />,
     },
   ];
 

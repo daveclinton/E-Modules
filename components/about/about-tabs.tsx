@@ -6,17 +6,17 @@ const tabs = [
   {
     title: "Our Mission",
     content:
-      "To provide exceptional construction services that exceed client expectations through innovation, quality craftsmanship, and a commitment to sustainability. We aim to build lasting relationships and create spaces that enhance communities.",
+      "To deliver quality, cost‑effective, and legally compliant construction solutions through professional design, accurate costing, and efficient project execution.",
   },
   {
     title: "Our Vision",
     content:
-      "To be recognized as a leading force in modern construction, inspiring trust through technological advancement, integrity, and a passion for excellence.",
+      "To be a leading and trusted construction company in Kenya and beyond, recognized for quality workmanship, integrity, and sustainable development.",
   },
   {
     title: "Our History",
     content:
-      "Founded with a vision to transform construction, our company has grown from humble beginnings into a trusted partner for residential and commercial projects alike.",
+      "Founded around 2010 by Sammy Ngigi, E‑Design Modules emerged with the goal of integrating design, cost management, and construction into a unified process. Over time, it has grown into a fully integrated firm offering comprehensive services across Kenya and internationally.",
   },
 ];
 
