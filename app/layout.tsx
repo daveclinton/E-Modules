@@ -86,8 +86,8 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
+          enableSystem={false}
+          disableTransitionOnChange={false}
         >
             <Navbar />
             <main>{children}</main>

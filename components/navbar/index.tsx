@@ -33,7 +33,7 @@ export function Navbar() {
           onClick={() => handleScroll("home")}
           className="font-bold text-lg text-primary"
         >
-          Renovate
+          E-Design Modules
         </button>
 
         {/* Desktop Nav Links */}
