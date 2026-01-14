@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
+import { FloatingContact } from "@/components/floating-contact";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -92,6 +93,7 @@ export default function RootLayout({
             <Navbar />
             <main>{children}</main>
             <Footer />
+            <FloatingContact />
         </ThemeProvider>
       </body>
     </html>

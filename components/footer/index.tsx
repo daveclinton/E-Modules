@@ -5,16 +5,26 @@ import { Mail, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useState, FormEvent } from "react";
 
 export default function Footer() {
   const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [email, setEmail] = useState("");
 
   // Avoid hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const handleSubscribe = (e: FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      // You can integrate with your email service here
+      window.location.href = `mailto:info@edesignmodules.co.ke?subject=Newsletter Subscription&body=Please subscribe ${email} to your newsletter.`;
+      setEmail("");
+    }
+  };
 
   // Determine which logo to use based on theme
   // Footer has opposite theme: when site is dark, footer is light (white)
@@ -65,16 +75,25 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex items-center gap-2 bg-background rounded-full p-1 pl-4 shadow-sm w-full md:w-auto">
+          <form 
+            onSubmit={handleSubscribe}
+            className="flex items-center gap-2 bg-background rounded-full p-1 pl-4 shadow-sm w-full md:w-auto"
+          >
             <input
               type="email"
               placeholder="Enter your Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
               className="flex-1 bg-transparent outline-none text-sm text-foreground placeholder:text-muted-foreground"
             />
-            <Button className="bg-primary text-primary-foreground rounded-full px-6">
+            <Button 
+              type="submit"
+              className="bg-primary text-primary-foreground rounded-full px-6"
+            >
               Subscribe
             </Button>
-          </div>
+          </form>
         </div>
 
         <div className="grid md:grid-cols-4 gap-12 border-t border-background/10 pt-12">

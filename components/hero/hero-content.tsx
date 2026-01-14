@@ -1,6 +1,15 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 
 export default function HeroContent() {
+  const handleBookNow = () => {
+    const element = document.getElementById("contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div className="space-y-6">
       <h1 className="text-4xl md:text-6xl font-bold leading-tight">
@@ -13,7 +22,10 @@ export default function HeroContent() {
       </p>
 
       <div className="flex flex-wrap gap-4 pt-2">
-        <Button className="bg-primary text-primary-foreground hover:opacity-90">
+        <Button 
+          onClick={handleBookNow}
+          className="bg-primary text-primary-foreground hover:opacity-90"
+        >
           Book Now
         </Button>
         <Button

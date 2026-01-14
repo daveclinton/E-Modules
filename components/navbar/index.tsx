@@ -87,7 +87,15 @@ export function Navbar() {
         {/* Right: Theme & CTA */}
         <div className="hidden md:flex items-center space-x-4">
           <ThemeToggle />
-          <Button className="bg-primary text-primary-foreground">
+          <Button 
+            onClick={() => {
+              const element = document.getElementById("contact");
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }}
+            className="bg-primary text-primary-foreground"
+          >
             Book Now
           </Button>
         </div>
@@ -123,7 +131,16 @@ export function Navbar() {
             </button>
           ))}
           <div className="flex justify-between items-center pt-4">
-            <Button className="bg-primary text-primary-foreground w-full">
+            <Button 
+              onClick={() => {
+                const element = document.getElementById("contact");
+                if (element) {
+                  element.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+                setIsMenuOpen(false);
+              }}
+              className="bg-primary text-primary-foreground w-full"
+            >
               Book Now
             </Button>
             <ThemeToggle />
