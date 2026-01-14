@@ -10,7 +10,7 @@ import { SalesBanner } from "@/components/sales-banner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://edesignmodules.com"),
+  metadataBase: new URL("https://www.edesignmodules.com"),
   title: {
     default: "E‑Design Modules",
     template: "%s | E‑Design Modules",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description:
     "E‑Design Modules is a multidisciplinary construction and design company based in Kenya, providing integrated architectural, quantity surveying, and construction services. Trusted for accuracy, compliance, and reliable project delivery since 2010.",
   applicationName: "E‑Design Modules",
-  authors: [{ name: "E‑Design Modules", url: "https://edesignmodules.com" }],
+  authors: [{ name: "E‑Design Modules", url: "https://www.edesignmodules.com" }],
   generator: "Next.js 15 + Shadcn UI",
   keywords: [
     "E‑Design Modules",
@@ -36,11 +36,11 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://edesignmodules.com",
+    canonical: "https://www.edesignmodules.com",
   },
   openGraph: {
     type: "website",
-    url: "https://edesignmodules.com",
+    url: "https://www.edesignmodules.com",
     title: "E‑Design Modules",
     description:
       "A multidisciplinary design and construction company offering architectural design, quantity surveying, and building solutions across Kenya.",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     locale: "en_KE",
     images: [
       {
-        url: "https://edesignmodules.com/og-image.jpg",
+        url: "https://www.edesignmodules.com/og-image.png",
         width: 1200,
         height: 630,
         alt: "E‑Design Modules | Designing with Purpose. Building to Standard.",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "E‑Design Modules",
     description:
       "Designing with Purpose. Building to Standard. Kenya’s trusted partner in integrated architectural design and construction.",
-    images: ["https://edesignmodules.com/og-image.png"],
+    images: ["https://www.edesignmodules.com/og-image.png"],
     creator: "@edesignmodules",
   },
   icons: {
