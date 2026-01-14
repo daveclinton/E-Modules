@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { ProjectCard } from "./project-card";
 
 
@@ -12,7 +12,7 @@ export default function ProjectsSection() {
       location: "Nakuru County, Kenya",
       date: "Duration: 6 months",
       scope: "Design, Quantity Surveying, and Construction",
-      image: "/images/project-1.avif",
+      image: "/images/project-one.jpeg",
     },
     {
       title: "Commercial Office Development",
@@ -21,7 +21,7 @@ export default function ProjectsSection() {
       location: "Nairobi, Kenya",
       date: "Duration: 9 months",
       scope: "Project Management and Construction",
-      image: "/images/project-2.avif",
+      image: "/images/project-two.jpeg",
       reverse: true,
     },
     {
@@ -31,7 +31,7 @@ export default function ProjectsSection() {
       location: "Kenya",
       date: "Duration: 12 months",
       scope: "Design Coordination and Construction",
-      image: "/images/project-1.avif",
+      image: "/images/project-three.jpeg",
     },
   ];
 

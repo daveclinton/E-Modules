@@ -1,11 +1,12 @@
 import Image from "next/image";
+import { User } from "lucide-react";
 
 export default function HeroImage() {
   return (
     <div className="relative">
       <div className="rounded-lg overflow-hidden shadow-lg">
         <Image
-          src="/images/hero-construction.png"
+          src="/images/hero-construction.jpeg"
           alt="Construction team discussing blueprint"
           width={600}
           height={400}
@@ -23,23 +24,17 @@ export default function HeroImage() {
 
 
 function AvatarGroup() {
-  const avatars = [
-    "/avatars/avatar-1.avif",
-    "/avatars/avatar-2.avif",
-    "/avatars/avatar-3.avif",
-  ];
+  const avatarCount = 3;
 
   return (
     <div className="flex -space-x-3">
-      {avatars.map((src, i) => (
-        <Image
+      {Array.from({ length: avatarCount }).map((_, i) => (
+        <div
           key={i}
-          src={src}
-          alt="team member"
-          width={40}
-          height={40}
-          className="rounded-full border-2 border-background"
-        />
+          className="w-10 h-10 rounded-full bg-muted border-2 border-background flex items-center justify-center"
+        >
+          <User className="w-5 h-5 text-muted-foreground" />
+        </div>
       ))}
       <div className="flex items-center justify-center w-10 h-10 rounded-full bg-foreground text-background text-sm font-medium border-2 border-background">
         +

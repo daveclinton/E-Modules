@@ -1,8 +1,30 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Mail, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function Footer() {
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // Avoid hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Determine which logo to use based on theme
+  // Footer has opposite theme: when site is dark, footer is light (white)
+  // and when site is light, footer is dark
+  const isDark = mounted && (resolvedTheme === "dark" || theme === "dark");
+  // Invert the logic: if site is dark (footer is light), use light logos
+  // if site is light (footer is dark), use dark logos
+  const logoSrc = isDark ? "/light-logo.png" : "/dark-logo.png";
+  const logoIconSrc = isDark ? "/light-logo-icon.png" : "/dark-logo-icon.png";
+
   const navLinks = [
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
@@ -58,9 +80,30 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 border-t border-background/10 pt-12">
           {/* Company info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2 font-semibold text-lg">
-              <div className="w-6 h-6 rounded-sm bg-primary"></div>
-              <span>E‑Design Modules</span>
+            <div className="flex items-center space-x-2">
+              {mounted ? (
+                <>
+                  <Image
+                    src={logoIconSrc}
+                    alt="E-Design Modules Icon"
+                    width={32}
+                    height={32}
+                    className="h-8 w-8"
+                  />
+                  <Image
+                    src={logoSrc}
+                    alt="E-Design Modules Logo"
+                    width={120}
+                    height={40}
+                    className="h-8 w-auto"
+                  />
+                </>
+              ) : (
+                <div className="flex items-center space-x-2 font-semibold text-lg">
+                  <div className="w-6 h-6 rounded-sm bg-primary"></div>
+                  <span>E‑Design Modules</span>
+                </div>
+              )}
             </div>
             <p className="text-sm text-background/80 max-w-sm">
               Revolutionizing the construction industry with innovative solutions

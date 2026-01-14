@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { Star } from "lucide-react";
+import { Star, User } from "lucide-react";
 
 interface TestimonialCardProps {
   name: string;
@@ -20,13 +19,8 @@ export function TestimonialCard({
     <div className="bg-card border border-border rounded-2xl p-6 shadow-sm h-full flex flex-col justify-between text-center">
       {/* Top */}
       <div className="flex flex-col items-center mb-4">
-        <div className="w-16 h-16 relative mb-3">
-          <Image
-            src={image}
-            alt={name}
-            fill
-            className="rounded-full object-cover"
-          />
+        <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center mb-3 border-2 border-border">
+          <User className="w-8 h-8 text-muted-foreground" />
         </div>
         <h3 className="font-semibold text-lg">{name}</h3>
         <span className="text-sm text-muted-foreground">{role}</span>

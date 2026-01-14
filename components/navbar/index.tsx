@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MenuIcon, XIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { useTheme } from "next-themes";
+import Image from "next/image";
 import clsx from "clsx";
 
 const navItems = [
@@ -16,6 +18,13 @@ const navItems = [
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // Avoid hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
@@ -25,15 +34,41 @@ export function Navbar() {
     }
   };
 
+  // Determine which logo to use based on theme
+  const isDark = mounted && (resolvedTheme === "dark" || theme === "dark");
+  const logoSrc = isDark ? "/dark-logo.png" : "/light-logo.png";
+  const logoIconSrc = isDark ? "/dark-logo-icon.png" : "/light-logo-icon.png";
+
   return (
     <nav className="w-full bg-background/70 backdrop-blur-lg sticky top-0 z-50">
       <div className="mx-auto max-w-7xl flex items-center justify-between py-4 px-6">
         {/* Logo */}
         <button
           onClick={() => handleScroll("home")}
-          className="font-bold text-lg text-primary"
+          className="flex items-center h-10 gap-2"
         >
-          E-Design Modules
+          {mounted ? (
+            <>
+              <Image
+                src={logoIconSrc}
+                alt="E-Design Modules Icon"
+                width={32}
+                height={32}
+                className="h-8 w-8"
+                priority
+              />
+              <Image
+                src={logoSrc}
+                alt="E-Design Modules Logo"
+                width={120}
+                height={40}
+                className="h-8 w-auto"
+                priority
+              />
+            </>
+          ) : (
+            <span className="font-bold text-lg text-primary">E-Design Modules</span>
+          )}
         </button>
 
         {/* Desktop Nav Links */}
