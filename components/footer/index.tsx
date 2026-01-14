@@ -1,28 +1,85 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Mail, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Mail, Facebook, Instagram, Linkedin, Twitter, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState, FormEvent } from "react";
+import clsx from "clsx";
 
 export default function Footer() {
   const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [touched, setTouched] = useState(false);
 
   // Avoid hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const handleSubscribe = (e: FormEvent) => {
+  const validateEmail = (emailValue: string): string => {
+    if (!emailValue.trim()) {
+      return "Email is required";
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailValue)) {
+      return "Please enter a valid email address";
+    }
+    return "";
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEmail(value);
+    setTouched(true);
+    
+    if (touched) {
+      const error = validateEmail(value);
+      setEmailError(error);
+    }
+  };
+
+  const handleBlur = () => {
+    setTouched(true);
+    const error = validateEmail(email);
+    setEmailError(error);
+  };
+
+  const handleSubscribe = async (e: FormEvent) => {
     e.preventDefault();
-    if (email) {
-      // You can integrate with your email service here
-      window.location.href = `mailto:info@edesignmodules.co.ke?subject=Newsletter Subscription&body=Please subscribe ${email} to your newsletter.`;
+    setTouched(true);
+    
+    const error = validateEmail(email);
+    if (error) {
+      setEmailError(error);
+      return;
+    }
+
+    setIsSubmitting(true);
+    setEmailError("");
+
+    // Simulate API call
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      
+      // Simulate successful submission
+      setIsSuccess(true);
       setEmail("");
+      setTouched(false);
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setIsSuccess(false);
+      }, 5000);
+    } catch (error) {
+      setEmailError("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -75,25 +132,65 @@ export default function Footer() {
             </p>
           </div>
 
-          <form 
-            onSubmit={handleSubscribe}
-            className="flex items-center gap-2 bg-background rounded-full p-1 pl-4 shadow-sm w-full md:w-auto"
-          >
-            <input
-              type="email"
-              placeholder="Enter your Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="flex-1 bg-transparent outline-none text-sm text-foreground placeholder:text-muted-foreground"
-            />
-            <Button 
-              type="submit"
-              className="bg-primary text-primary-foreground rounded-full px-6"
+          <div className="w-full md:w-auto">
+            <form 
+              onSubmit={handleSubscribe}
+              className="flex flex-col gap-2"
             >
-              Subscribe
-            </Button>
-          </form>
+              <div className="flex flex-col gap-1">
+                <div className={clsx(
+                  "flex items-center gap-2 bg-background rounded-full p-1 pl-4 shadow-sm transition-all",
+                  emailError ? "ring-2 ring-red-500/50" : "",
+                  isSuccess ? "ring-2 ring-green-500/50" : ""
+                )}>
+                  <input
+                    type="email"
+                    placeholder="Enter your Email"
+                    value={email}
+                    onChange={handleEmailChange}
+                    onBlur={handleBlur}
+                    disabled={isSubmitting || isSuccess}
+                    className="flex-1 bg-transparent outline-none text-sm text-foreground placeholder:text-muted-foreground disabled:opacity-50"
+                  />
+                  <Button 
+                    type="submit"
+                    disabled={isSubmitting || isSuccess}
+                    className="bg-primary text-primary-foreground rounded-full px-6 disabled:opacity-50"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Sending...
+                      </>
+                    ) : isSuccess ? (
+                      <>
+                        <CheckCircle2 className="w-4 h-4 mr-2" />
+                        Sent!
+                      </>
+                    ) : (
+                      "Subscribe"
+                    )}
+                  </Button>
+                </div>
+                
+                {/* Error Message */}
+                {emailError && touched && (
+                  <div className="flex items-center gap-1.5 text-red-400 text-xs px-4 animate-in slide-in-from-top-1">
+                    <AlertCircle className="w-3 h-3 flex-shrink-0" />
+                    <span>{emailError}</span>
+                  </div>
+                )}
+                
+                {/* Success Message */}
+                {isSuccess && (
+                  <div className="flex items-center gap-1.5 text-green-400 text-xs px-4 animate-in slide-in-from-top-1">
+                    <CheckCircle2 className="w-3 h-3 flex-shrink-0" />
+                    <span>Thank you! We've sent a confirmation email to your inbox.</span>
+                  </div>
+                )}
+              </div>
+            </form>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-4 gap-12 border-t border-background/10 pt-12">
