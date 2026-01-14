@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
@@ -42,42 +41,31 @@ export function ProjectCard({
       </div>
 
       {/* Content */}
-      <div className="p-8 flex flex-col justify-between">
-        <div>
-          <h3 className="text-2xl font-semibold mb-2">{title}</h3>
-          <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-            {description}
-          </p>
+      <div className="p-8">
+        <h3 className="text-2xl font-semibold mb-2">{title}</h3>
+        <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+          {description}
+        </p>
 
-          <div className="space-y-3 text-sm">
-            <div className="flex">
-              <span className="w-24 text-muted-foreground font-medium">
-                Location:
-              </span>
-              <span>{location}</span>
-            </div>
-            <div className="flex">
-              <span className="w-24 text-muted-foreground font-medium">
-                Date:
-              </span>
-              <span>{date}</span>
-            </div>
-            <div className="flex">
-              <span className="w-24 text-muted-foreground font-medium">
-                Scope:
-              </span>
-              <span>{scope}</span>
-            </div>
+        <div className="space-y-3 text-sm">
+          <div className="flex">
+            <span className="w-24 text-muted-foreground font-medium">
+              Location:
+            </span>
+            <span>{location}</span>
           </div>
-        </div>
-
-        <div className="pt-8">
-          <Button
-            variant="secondary"
-            className="bg-green-600 hover:bg-green-500 text-white"
-          >
-            See More
-          </Button>
+          <div className="flex">
+            <span className="w-24 text-muted-foreground font-medium">
+              Date:
+            </span>
+            <span>{date}</span>
+          </div>
+          <div className="flex">
+            <span className="w-24 text-muted-foreground font-medium">
+              Scope:
+            </span>
+            <span>{scope}</span>
+          </div>
         </div>
       </div>
     </div>

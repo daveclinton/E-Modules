@@ -58,14 +58,14 @@ export default function ServicesSection() {
       id="services"
       className="w-full py-24 bg-muted/20 text-foreground overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="flex items-center justify-between mb-10">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-2">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-10">
+          <div className="flex-1">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
               Services Tailored to You
             </h2>
-            <p className="text-muted-foreground max-w-2xl">
+            <p className="text-muted-foreground text-sm sm:text-base max-w-2xl">
               We provide customized construction solutions designed to meet your
               unique needs, ensuring every project reflects your vision and
               exceeds expectations.
@@ -73,16 +73,18 @@ export default function ServicesSection() {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="hidden md:flex space-x-3">
+          <div className="flex space-x-3">
             <button
               ref={prevRef}
               className="w-10 h-10 rounded-full border border-border flex items-center justify-center bg-background hover:bg-muted transition-colors"
+              aria-label="Previous service"
             >
               ‹
             </button>
             <button
               ref={nextRef}
               className="w-10 h-10 rounded-full border border-border flex items-center justify-center bg-background hover:bg-muted transition-colors"
+              aria-label="Next service"
             >
               ›
             </button>
@@ -92,12 +94,13 @@ export default function ServicesSection() {
         {/* Swiper Carousel */}
         <Swiper
           modules={[Navigation]}
-          spaceBetween={24}
-          slidesPerView={1.2}
+          spaceBetween={16}
+          slidesPerView={1.15}
           breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-            1280: { slidesPerView: 4 },
+            480: { slidesPerView: 1.5, spaceBetween: 20 },
+            640: { slidesPerView: 2, spaceBetween: 24 },
+            1024: { slidesPerView: 3, spaceBetween: 24 },
+            1280: { slidesPerView: 4, spaceBetween: 24 },
           }}
           onInit={(swiper) => {
             if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
